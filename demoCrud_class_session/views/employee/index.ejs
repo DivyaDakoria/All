@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+</head>
+<body>
+    <center>
+        <input type="button" value="Insert New Employee" onclick="window.location.href='/employee/insert'"/>
+        <table border="2">
+            <tr>
+                <th>ID</th>
+                <th>Employee Name</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>City</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <% for(i=0;i< emps.length;i++){ %>
+                <tr>
+                    <td><%=  emps[i]._id %></td>
+                    <td><%=  emps[i].fullName %></td>
+                    <td><%=  emps[i].deptID.deptName %></td>
+                    <td><%=  emps[i].email %></td>
+                    <td><%=  emps[i].mobile %></td>
+                    <td><%=  emps[i].city %></td>
+                    <td><a href="employee/update?id=<%= emps[i]._id %>">Edit</a></td>
+                    <td><a href="employee/deleteEmp?id=<%= emps[i]._id %>">Delete</a></td>
+                </tr>
+            <% } %>
+
+        </table>
+
+    </center>
+</body>
+</html>

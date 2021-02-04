@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Department</title>
+</head>
+<body>
+    
+    <center>
+        <form method="POST" action="/Department/updateDept">
+            <table border="2">
+                <tr>
+                    <td>Department Name</td>
+                    <td>
+                        <input type="hidden" name="hdnDeptID" value="<%= dept._id %>" />
+                        <input type="text" name="txtDeptName" id="txtDeptName" value="<%= dept.deptName %>" placeholder="Enter Department">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Update" />
+                    </td>
+                </tr>
+            </table>
+            </form>
+    </center>
+
+
+</body>
+</html>

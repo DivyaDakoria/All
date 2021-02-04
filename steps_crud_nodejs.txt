@@ -1,0 +1,12 @@
+1--> Create new folder
+2--> Create 
+	models 
+	views
+	controllers folder in that new folder
+3--> server.js
+4--> install packages    
+	npm init
+	npm i --save express mongoose ejs
+
+5--> create entities
+6--> Create db.js (which is  connection file to mongodb)

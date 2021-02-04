@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee</title>
+</head>
+<body>
+    <center>
+        <form action="/employee/editEmp" method="POST">
+            <table border="2">
+                <tr>
+                    <td>Employee Name</td>
+                    <td>
+                        <input type="hidden" value="<%= emp._id %>" name="_id"/>
+                        <input type="text" name="fullName" value="<%= emp.fullName %>" id="txtEmpName">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Department</td>
+                    <td>
+                        <select name="deptID">
+                            <% for(i=0; i < depts.length; i++){ %>
+                                <% if(depts[i]._id.toString() == emp.deptID.toString()){ %>
+                                    <option selected value="<%= depts[i]._id %>"><%= depts[i].deptName %></option>
+                                <% } else { %>
+                                    <option value="<%= depts[i]._id %>"><%= depts[i].deptName %></option>
+                                <% } %>
+                            <% } %>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" value="<%= emp.email %>" name="email" id="txtEmail"></td>
+                </tr>
+
+                <tr>
+                    <td>Mobile</td>
+                    <td><input type="tel" value="<%= emp.mobile %>" name="mobile" id="txtMobile"></td>
+                </tr>
+
+                <tr>
+                    <td>City</td>
+                    <td><input type="text" name="city" value="<%= emp.city %>" id="txtCity"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Update" />
+                        <input type="button" value="Cancel" onclick="window.location.href='/employee'" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department</title>
+</head>
+<body>
+    <center>
+    <h1>Department</h1>
+    <table border="2">
+        <tr>
+            <th>ID</th>
+            <th>Department Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <% for(i=0;i< depts.length;i++){ %>
+            <tr>
+                <td><%=  depts[i]._id %></td>
+                <td><%=  depts[i].deptName %></td>
+                <td><a href="department/update?id=<%= depts[i]._id %>">Edit</a></td>
+                <td><a href="department/deleteDept?id=<%= depts[i]._id %>">Delete</a></td>
+            </tr>
+        <% } %>
+    </table>
+
+    <form method="POST" action="/Department/insertDept">
+    <table border="2">
+        <tr>
+            <td>Department Name</td>
+            <td><input type="text" name="txtDeptName" id="txtDeptName" placeholder="Enter Department"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Insert" />
+            </td>
+        </tr>
+    </table>
+    </form>
+
+
+    </center>
+</body>
+</html>
